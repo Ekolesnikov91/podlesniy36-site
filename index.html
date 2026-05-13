@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подлесный — коттеджный посёлок рядом с Воронежем</title>
+  <meta name="description" content="Коттеджный посёлок «Подлесный» в Староживотинном. Готовые дома и участки с подрядом. 5 км от центра Воронежа, рядом с лесом, все коммуникации.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Montserrat", Arial, sans-serif;
+      color: #464646;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── Tokens ─── */
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f7f7f4;
+      --text: #464646;
+      --text-strong: #1f1f1f;
+      --text-muted: #68685f;
+      --accent: #a6b3b2;
+      --border: #d9d9d9;
+      --border-soft: #d9d9d0;
+      --max-w: 1200px;
+    }
+
+    /* ─── Header ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 62px;
+      gap: 24px;
+    }
+
+    .site-header__logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .site-header__logo-main {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-strong);
+    }
+
+    .site-header__logo-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .site-header__nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .site-header__nav a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: color 180ms ease;
+    }
+
+    .site-header__nav a:hover { color: var(--text); }
+
+    .site-header__phone {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-strong);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header__burger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .site-header__burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      transition: transform 240ms ease, opacity 240ms ease;
+    }
+
+    .site-header__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .site-header__burger.is-open span:nth-child(2) { opacity: 0; }
+    .site-header__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .site-header__mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .site-header__mobile-nav.is-open { display: flex; }
+
+    .site-header__mobile-nav a {
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      max-height: 940px;
+      display: flex;
+      align-items: flex-start;
+      padding: 72px 20px 0;
+      background: #1d2a1e;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.92;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__bg { display: none; }
+      .hero { background-image: url("img/hero-bg.jpg"); background-size: cover; background-position: center top; }
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(10,20,10,0.88) 0%, rgba(10,20,10,0.60) 22%, rgba(10,20,10,0.12) 46%, rgba(10,20,10,0.0) 58%),
+        linear-gradient(to top, rgba(10,20,10,0.40) 0%, rgba(10,20,10,0.0) 14%);
+    }
+
+    .hero__inner {
+      position: relative;
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero__tag {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 5px 12px;
+      border: 1px solid rgba(166,179,178,0.6);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c8d5d4;
+    }
+
+    .hero__title {
+      max-width: 720px;
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .hero__subtitle {
+      max-width: 520px;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 36px;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .hero__scroll:hover { opacity: 1; }
+    .hero__scroll-dot {
+      animation: scroll-pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes scroll-pulse {
+      0%   { transform: translateY(0);   opacity: 1; }
+      60%  { transform: translateY(8px); opacity: 0.2; }
+      100% { transform: translateY(0);   opacity: 1; }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 32px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 0;
+      transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: #8ea09f;
+      border-color: #8ea09f;
+    }
+
+    .btn--outline-light {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.55);
+      color: #fff;
+    }
+
+    .btn--outline-light:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.75);
+    }
+
+    .btn--outline {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn--outline:hover {
+      background: #f5f5f5;
+      border-color: #a8a8a8;
+    }
+
+    /* ─── Section base ─── */
+    .section {
+      padding: 72px 20px;
+    }
+
+    .section--alt { background: var(--bg-alt); }
+
+    .section__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .section__title {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text-strong);
+      margin-bottom: 16px;
+    }
+
+    .section__lead {
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 52px;
+    }
+
+    /* ─── About ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    .about-item {
+      padding: 32px 28px 36px;
+      background: var(--bg);
+    }
+
+    .about-item__icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .about-item__title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-strong);
+      margin-bottom: 10px;
+    }
+
+    .about-item__text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ─── Houses ─── */
+    .pdl-houses {
+      background: var(--bg);
+      padding: 72px 20px;
+    }
+
+    .pdl-houses__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .pdl-houses__title {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text-strong);
+      margin-bottom: 56px;
+    }
+
+    .pdl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 40px;
+    }
+
+    .pdl-card { position: relative; }
+
+    .pdl-card__address {
+      font-size: 22px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-strong);
+      margin-bottom: 10px;
+    }
+
+    .pdl-card__price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-strong);
+      margin-bottom: 8px;
+    }
+
+    .pdl-card__meta {
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .pdl-card__image-button {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      margin: 20px 0 18px;
+      padding: 0;
+      border: 0;
+      background: #e8ece8;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .pdl-card__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--pdl-cover-position, center center);
+      transition: transform 320ms ease;
+    }
+
+    .pdl-card__image-button:hover .pdl-card__image { transform: scale(1.04); }
+
+    .pdl-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 30px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background-color 200ms ease, border-color 200ms ease;
+    }
+
+    .pdl-button:hover { background: #f5f5f5; border-color: #a8a8a8; }
+
+    /* ─── Modal ─── */
+    .pdl-modal[hidden] { display: none; }
+
+    .pdl-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      background: rgba(0,0,0,0.55);
+      opacity: 0;
+      transition: opacity 240ms ease;
+      font-family: "Montserrat", Arial, sans-serif;
+    }
+
+    .pdl-modal.pdl-open { opacity: 1; }
+
+    .pdl-modal__panel {
+      width: min(1120px, 100%);
+      max-height: calc(100vh - 64px);
+      overflow: auto;
+      background: var(--bg);
+      color: var(--text);
+      transform: translateY(18px);
+      transition: transform 240ms ease;
+      font-family: "Montserrat", Arial, sans-serif;
+    }
+
+    .pdl-modal.pdl-open .pdl-modal__panel { transform: translateY(0); }
+
+    .pdl-modal__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pdl-modal__back, .pdl-modal__close {
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .pdl-modal__back { font-size: 15px; font-weight: 600; }
+    .pdl-modal__close { width: 42px; height: 42px; font-size: 28px; line-height: 1; }
+
+    .pdl-modal__content {
+      display: grid;
+      grid-template-columns: minmax(0, 52fr) minmax(340px, 48fr);
+      gap: 38px;
+      padding: 36px 36px 44px;
+    }
+
+    .pdl-modal__media { min-width: 0; }
+
+    .pdl-modal__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: min(56vh, 430px);
+      object-fit: contain;
+      background: var(--bg-alt);
+    }
+
+    .pdl-gallery { position: relative; }
+    .pdl-gallery__stage { position: relative; display: flex; align-items: center; justify-content: center; }
+
+    .pdl-gallery__arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 58px;
+      border: 0;
+      background: rgba(255,255,255,0.78);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 38px;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: background-color 180ms ease;
+    }
+
+    .pdl-gallery__arrow:hover { background: rgba(255,255,255,0.94); }
+    .pdl-gallery__arrow[hidden] { display: none; }
+    .pdl-gallery__arrow--prev { left: 0; }
+    .pdl-gallery__arrow--next { right: 0; }
+
+    .pdl-gallery__thumbs {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 82px;
+      gap: 10px;
+      margin-top: 14px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+    }
+
+    .pdl-gallery__thumb {
+      position: relative;
+      width: 82px;
+      aspect-ratio: 1;
+      padding: 0;
+      border: 2px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0.72;
+      transition: border-color 180ms ease, opacity 180ms ease;
+    }
+
+    .pdl-gallery__thumb:hover,
+    .pdl-gallery__thumb.pdl-active { border-color: var(--text); opacity: 1; }
+
+    .pdl-gallery__thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #f4f4f4;
+    }
+
+    .pdl-gallery__thumb-label {
+      position: absolute;
+      left: 4px; right: 4px; bottom: 4px;
+      padding: 3px 4px;
+      background: rgba(255,255,255,0.9);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .pdl-modal__text { align-self: start; }
+
+    .pdl-modal__title {
+      font-size: 32px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .pdl-modal__price {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-strong);
+      margin-bottom: 24px;
+    }
+
+    .pdl-modal__description p {
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .pdl-modal__note {
+      font-size: 14px;
+      font-style: italic;
+      color: #5a5a5a;
+      margin: 0 0 16px;
+    }
+
+    .pdl-modal__bullets {
+      margin: 0 0 28px;
+      padding-left: 18px;
+      list-style: disc;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .pdl-modal__bullets li { margin-bottom: 6px; }
+    .pdl-modal__cta { min-width: 220px; margin-top: 4px; }
+
+    /* ─── Routes ─── */
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .route-card {
+      display: flex;
+      flex-direction: column;
+      padding: 32px 30px 34px;
+      border: 1px solid var(--border-soft);
+      background: var(--bg);
+    }
+
+    .route-card__label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .route-card__title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-strong);
+      margin-bottom: 14px;
+    }
+
+    .route-card__text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .route-card__list {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 28px;
+    }
+
+    .route-card__list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .route-card__list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .route-card__action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      margin-top: auto;
+      padding: 14px 24px;
+      border: 1px solid var(--border-soft);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 200ms ease, border-color 200ms ease;
+    }
+
+    .route-card__action:hover { background: #f1f1ed; border-color: #a8a89f; }
+
+    /* ─── Finance ─── */
+    .finance-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .finance-card {
+      padding: 32px 32px 36px;
+      border: 1px solid var(--border-soft);
+      background: var(--bg);
+    }
+
+    .finance-card__label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .finance-card__title {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-strong);
+      margin-bottom: 14px;
+    }
+
+    .finance-card__text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .finance-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .finance-list li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .finance-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      margin-top: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .finance-card__note {
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* ─── Infra ─── */
+    .infra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      background: var(--border);
+      margin-top: 48px;
+    }
+
+    .infra-item {
+      background: var(--bg-alt);
+      padding: 26px 24px;
+    }
+
+    .infra-item__time {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .infra-item__unit {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .infra-item__name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-strong);
+    }
+
+    /* ─── Communications ─── */
+    .comms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .comm-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px 22px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .comm-item__icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      color: var(--accent);
+    }
+
+    .comm-item__title {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-strong);
+      margin-bottom: 4px;
+    }
+
+    .comm-item__text {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* ─── Contact / Footer ─── */
+    .contact {
+      background: #2b3a2e;
+      color: #fff;
+      padding: 72px 20px;
+    }
+
+    .contact__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact__title {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.08;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .contact__subtitle {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+    }
+
+    .contact__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn--tg {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .btn--tg:hover { background: #8ea09f; border-color: #8ea09f; }
+
+    .btn--email {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .btn--email:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.65); }
+
+    .contact__details {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact__detail-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 6px;
+    }
+
+    .contact__detail-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact__detail-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact__detail-value a:hover { color: #fff; }
+
+    .footer-bar {
+      background: #1e2a21;
+      padding: 18px 20px;
+    }
+
+    .footer-bar__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-bar__copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-bar__nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bar__nav a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    .footer-bar__nav a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ─── Divider ─── */
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: repeat(2, 1fr); }
+      .pdl-grid { grid-template-columns: repeat(2, 1fr); }
+      .infra-grid { grid-template-columns: repeat(3, 1fr); }
+      .pdl-modal__content { grid-template-columns: 1fr; gap: 28px; }
+      .contact__inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .site-header__nav { display: none; }
+      .site-header__burger { display: flex; }
+      .site-header__phone { font-size: 14px; }
+
+      .hero { height: 100svh; min-height: 560px; max-height: 800px; padding-top: 52px; }
+      .hero__title { font-size: clamp(28px, 8vw, 40px); }
+
+      .section { padding: 52px 20px; }
+      .section__lead { font-size: 16px; margin-bottom: 36px; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .pdl-grid { grid-template-columns: 1fr; }
+      .routes-grid { grid-template-columns: 1fr; }
+      .infra-grid { grid-template-columns: repeat(2, 1fr); }
+      .comms-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .pdl-modal { align-items: stretch; padding: 0; }
+      .pdl-modal__panel { max-height: 100vh; width: 100%; }
+      .pdl-modal__header { padding: 16px 20px; }
+      .pdl-modal__content { padding: 22px 20px 32px; }
+      .pdl-gallery__arrow { width: 38px; height: 50px; font-size: 32px; }
+
+      .contact__actions .btn { width: 100%; }
+      .footer-bar__inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .infra-grid { grid-template-columns: 1fr 1fr; }
+      .comms-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; border: none; gap: 1px; }
+      .about-item { border: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header" id="top">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="#top">
+      <span class="site-header__logo-main">Подлесный</span>
+      <span class="site-header__logo-sub">Коттеджный посёлок</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Основная навигация">
+      <a href="#o-posyolke">О посёлке</a>
+      <a href="#reglament">Регламент</a>
+      <a href="#doma">Готовые дома</a>
+      <a href="#puti">Как купить</a>
+      <a href="#proekty">Проекты</a>
+      <a href="#ipoteka">Ипотека</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+
+    <a class="site-header__phone" href="tel:+79601343346">+7 960 134-33-46</a>
+
+    <button class="site-header__burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="site-header__mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
+    <a href="#o-posyolke">О посёлке</a>
+    <a href="#reglament">Регламент</a>
+    <a href="#doma">Готовые дома</a>
+    <a href="#puti">Как купить</a>
+    <a href="#proekty">Проекты</a>
+    <a href="#ipoteka">Ипотека</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#kontakty">Контакты</a>
+    <a href="tel:+79601343346">+7 960 134-33-46</a>
+  </nav>
+</header>
+
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-labelledby="hero-title">
+  <video class="hero__bg" autoplay muted loop playsinline preload="none" poster="img/hero-bg.jpg" aria-hidden="true">
+    <source src="img/hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero__overlay" role="presentation"></div>
+
+  <div class="hero__inner">
+    <span class="hero__tag">Коттеджный посёлок · Староживотинное · Воронеж</span>
+    <h1 class="hero__title" id="hero-title">Загородный дом<br>в&nbsp;природной среде</h1>
+    <p class="hero__subtitle">Готовые дома и участки с подрядом. Рядом с дубовым лесом. 5 км от центра Воронежа.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#doma">Смотреть дома</a>
+      <a class="btn btn--outline-light" href="#puti">Как выбрать объект</a>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#o-posyolke" aria-label="Прокрутить вниз">
+    <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="1" y="1" width="18" height="26" rx="9" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+      <rect class="hero__scroll-dot" x="9" y="5" width="2" height="5" rx="1" fill="rgba(255,255,255,0.8)"/>
+    </svg>
+  </a>
+</section>
+
+
+<!-- ═══ О ПОСЁЛКЕ ═══ -->
+<section class="section section--alt" id="o-posyolke" aria-labelledby="about-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="about-title">О посёлке</h2>
+    <p class="section__lead">
+      КП «Подлесный» — семейный коттеджный посёлок в Староживотинном, 20 минут от центра Воронежа.
+      Природная среда, единый стиль застройки и вся необходимая инфраструктура.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-item">
+        <svg class="about-item__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 4C20 4 8 12 8 22a12 12 0 0024 0C32 12 20 4 20 4z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M20 4v28M8 22h24" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        </svg>
+        <div class="about-item__title">Природная среда</div>
+        <div class="about-item__text">Посёлок окружён дубовым и хвойным лесом. Внутри — зелёные зоны, сохранённые деревья на участках и вдоль улиц.</div>
+      </div>
+
+      <div class="about-item">
+        <svg class="about-item__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="6" y="18" width="28" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+          <path d="M4 18L20 6l16 12" stroke="currentColor" stroke-width="2"/>
+          <rect x="16" y="26" width="8" height="8" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="about-item__title">Единый стиль</div>
+        <div class="about-item__text">Застройка по согласованной архитектурной концепции. Одноэтажные дома, единый облик среды.</div>
+      </div>
+
+      <div class="about-item">
+        <svg class="about-item__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="2"/>
+          <path d="M20 10v10l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="about-item__title">Коммуникации</div>
+        <div class="about-item__text">Газ, электричество, водоснабжение, канализация, асфальт и интернет на каждом участке.</div>
+      </div>
+
+      <div class="about-item">
+        <svg class="about-item__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 6L8 14v20h24V14z" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 14l12-8 12 8" stroke="currentColor" stroke-width="2"/>
+          <rect x="15" y="22" width="10" height="12" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 8v6M26 8v6" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        </svg>
+        <div class="about-item__title">Безопасность</div>
+        <div class="about-item__text">КПП на въезде, видеонаблюдение по всей территории. Освещённые улицы и пешеходные дорожки. Закрытая огороженная территория.</div>
+      </div>
+      <div class="about-item">
+        <svg class="about-item__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="8" y="26" width="24" height="6" rx="1" stroke="currentColor" stroke-width="2"/>
+          <path d="M14 26v-8a2 2 0 014 0v8M22 26v-6a2 2 0 014 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="20" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <div class="about-item__title">Детские площадки</div>
+        <div class="about-item__text">Детская и игровая площадки на территории посёлка. Безопасное пространство для детей внутри закрытого КП.</div>
+      </div>
+
+      <div class="about-item">
+        <svg class="about-item__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M6 34h28M10 34V20M20 34V14M30 34V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 20h8M16 14h8M22 20h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <div class="about-item__title">Дороги и тротуары</div>
+        <div class="about-item__text">Асфальтированные дороги внутри посёлка, тротуары вдоль улиц, уличное освещение. Инфраструктура уже готова.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ АРХИТЕКТУРНЫЙ РЕГЛАМЕНТ ═══ -->
+<style>
+  .reglament { background: var(--bg); }
+  .reglament__street {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+    margin-bottom: 56px;
+  }
+  .reglament__styles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 900px) {
+    .reglament__styles { grid-template-columns: 1fr 1fr; }
+  }
+  .reglament-card { background: var(--bg-alt); overflow: hidden; }
+  .reglament-card__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .reglament-card__body { padding: 24px 28px 28px; }
+  .reglament-card__name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .reglament-card__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-strong);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+  .reglament-card__text {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+  .reglament__note {
+    border-left: 3px solid var(--accent);
+    padding: 16px 24px;
+    background: var(--bg-alt);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+  .reglament__note strong { color: var(--text); }
+  @media (max-width: 680px) {
+    .reglament__styles { grid-template-columns: 1fr; }
+    .reglament__street { max-height: 220px; margin-bottom: 36px; }
+    .reglament-card__body { padding: 20px; }
+    .reglament-card__title { font-size: 19px; }
+  }
+</style>
+
+<section class="section reglament" id="reglament" aria-labelledby="reglament-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="reglament-title">Архитектурный регламент</h2>
+    <p class="section__lead">В «Подлесном» принят единый архитектурный регламент. Два согласованных стиля&nbsp;— чтобы посёлок выглядел как единое целое, а не набор случайных построек.</p>
+
+    <img class="reglament__street" src="img/street-view-2.jpg" alt="Улица коттеджного посёлка Подлесный — единый архитектурный стиль" loading="lazy">
+
+    <div class="reglament__styles">
+
+      <div class="reglament-card">
+        <img class="reglament-card__img" src="img/house1-rear.jpg" alt="Фломанский стиль — визуализация" loading="lazy">
+        <div class="reglament-card__body">
+          <div class="reglament-card__name">Стиль 1</div>
+          <div class="reglament-card__title">Фломанский</div>
+          <p class="reglament-card__text">Белый кирпичный фасад, двускатная тёмная кровля, строгие вертикальные пропорции и характерные дымовые трубы. Сдержанная элегантность без лишних деталей — дом выглядит основательно и органично вписывается в природный контекст посёлка.</p>
+        </div>
+      </div>
+
+      <div class="reglament-card">
+        <img class="reglament-card__img" src="img/modern-style.jpg" alt="Минималистичный стиль — плоская крыша" loading="lazy">
+        <div class="reglament-card__body">
+          <div class="reglament-card__name">Стиль 2</div>
+          <div class="reglament-card__title">Минималистичный</div>
+          <p class="reglament-card__text">Плоская кровля, панорамные окна и открытые террасы — архитектура, где пространство и свет в приоритете. Геометрически чистый фасад, широкие проёмы и минималистичные линии стирают границу между домом и участком.</p>
+        </div>
+      </div>
+
+      <div class="reglament-card">
+        <img class="reglament-card__img" src="img/pihtovaya-1.jpg" alt="Баварский стиль — тёплый кирпич, вальмовая крыша" loading="lazy">
+        <div class="reglament-card__body">
+          <div class="reglament-card__name">Стиль 3</div>
+          <div class="reglament-card__title">Баварский</div>
+          <p class="reglament-card__text">Облицовочный кирпич тёплых земляных оттенков, широкая вальмовая кровля с тёмным покрытием, окна в чёрных профилях. Дом с характером — кирпичный фасад набирает выразительность с каждым годом и органично живёт рядом с лесом.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reglament__note">
+      <strong>Что это значит для вас:</strong> внешний вид посёлка предсказуем. Рядом не появится хаотичная постройка в случайном стиле. Единая среда формируется осознанно — это влияет на эстетику жизни и на ликвидность вашего дома со временем.
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ГОТОВЫЕ ДОМА ═══ -->
+<section class="pdl-houses" id="doma" aria-labelledby="pdl-houses-title">
+  <div class="pdl-houses__inner">
+    <div class="divider"></div>
+    <h2 class="pdl-houses__title" id="pdl-houses-title">Готовые дома</h2>
+
+    <div class="pdl-grid">
+
+      <article class="pdl-card">
+        <h3 class="pdl-card__address">ул. Дубовая, 1</h3>
+        <p class="pdl-card__price">21 500 000 ₽</p>
+        <p class="pdl-card__meta">219 м² · участок 8,6 сот.</p>
+        <p class="pdl-card__meta">Семейная ипотека · предчистовая</p>
+        <button class="pdl-card__image-button" type="button" data-pdl-house="dubovaya-1" style="--pdl-cover-position: 20% center" aria-label="Подробнее о доме на Дубовой, 1">
+          <img class="pdl-card__image" src="https://static.tildacdn.com/tild3964-3263-4238-b630-396638343236/photo_2026-04-25_21-.jpg" alt="Дом на Дубовой 1" width="800" height="533" loading="lazy">
+        </button>
+        <button class="pdl-button" type="button" data-pdl-house="dubovaya-1">Подробнее</button>
+      </article>
+
+      <article class="pdl-card">
+        <h3 class="pdl-card__address">ул. Дубовая, 2</h3>
+        <p class="pdl-card__price">21 500 000 ₽</p>
+        <p class="pdl-card__meta">219 м² · участок 8,6 сот.</p>
+        <p class="pdl-card__meta">Семейная ипотека · предчистовая</p>
+        <button class="pdl-card__image-button" type="button" data-pdl-house="dubovaya-2" style="--pdl-cover-position: 20% center" aria-label="Подробнее о доме на Дубовой, 2">
+          <img class="pdl-card__image" src="https://static.tildacdn.com/tild3964-3263-4238-b630-396638343236/photo_2026-04-25_21-.jpg" alt="Дом на Дубовой 2 (временное фото)" width="800" height="533" loading="lazy">
+        </button>
+        <button class="pdl-button" type="button" data-pdl-house="dubovaya-2">Подробнее</button>
+      </article>
+
+      <article class="pdl-card">
+        <h3 class="pdl-card__address">ул. Еловая, 1</h3>
+        <p class="pdl-card__price">16 500 000 ₽</p>
+        <p class="pdl-card__meta">154,5 м² · участок 9 сот.</p>
+        <p class="pdl-card__meta">Семейная ипотека · предчистовая</p>
+        <button class="pdl-card__image-button" type="button" data-pdl-house="elovaya-1" style="--pdl-cover-position: center 35%" aria-label="Подробнее о доме на Еловой, 1">
+          <img class="pdl-card__image" src="img/elovaya1-panorama.jpg" alt="Дом на Еловой 1" width="800" height="533" loading="lazy">
+        </button>
+        <button class="pdl-button" type="button" data-pdl-house="elovaya-1">Подробнее</button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="pdl-modal" id="pdl-house-modal" role="dialog" aria-modal="true" aria-labelledby="pdl-modal-title" hidden>
+  <div class="pdl-modal__panel" role="document">
+    <div class="pdl-modal__header">
+      <button class="pdl-modal__back" type="button" data-pdl-close>← Назад</button>
+      <button class="pdl-modal__close" type="button" data-pdl-close aria-label="Закрыть">×</button>
+    </div>
+    <div class="pdl-modal__content">
+      <div class="pdl-modal__media">
+        <div class="pdl-gallery" id="pdl-gallery">
+          <div class="pdl-gallery__stage">
+            <img class="pdl-modal__image" id="pdl-modal-image" src="" alt="" width="800" height="450">
+            <button class="pdl-gallery__arrow pdl-gallery__arrow--prev" type="button" id="pdl-gallery-prev" aria-label="Предыдущее фото">‹</button>
+            <button class="pdl-gallery__arrow pdl-gallery__arrow--next" type="button" id="pdl-gallery-next" aria-label="Следующее фото">›</button>
+          </div>
+          <div class="pdl-gallery__thumbs" id="pdl-gallery-thumbs" aria-label="Фотографии дома"></div>
+        </div>
+      </div>
+      <div class="pdl-modal__text">
+        <h3 class="pdl-modal__title" id="pdl-modal-title"></h3>
+        <p class="pdl-modal__price" id="pdl-modal-price"></p>
+        <div class="pdl-modal__description" id="pdl-modal-description"></div>
+        <p class="pdl-modal__note" id="pdl-modal-note" hidden></p>
+        <ul class="pdl-modal__bullets" id="pdl-modal-bullets"></ul>
+        <a class="pdl-button pdl-modal__cta" id="pdl-modal-cta" href="mailto:putilin-e@bk.ru">Оставить заявку</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ КАК ВЫБРАТЬ ═══ -->
+<section class="section section--alt" id="puti" aria-labelledby="routes-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="routes-title">Как выбрать объект</h2>
+    <p class="section__lead">
+      В КП «Подлесный» сейчас два сценария: готовый дом или участок со строительством по подрядному формату в единой архитектурной концепции посёлка.
+    </p>
+
+    <div class="routes-grid">
+      <article class="route-card">
+        <p class="route-card__label">Сценарий 01</p>
+        <h3 class="route-card__title">Готовый дом</h3>
+        <p class="route-card__text">
+          Подходит, если хотите посмотреть конкретный дом, оценить планировку, участок и готовность объекта. Все дома — предчистовая отделка, коммуникации подключены.
+        </p>
+        <ul class="route-card__list">
+          <li>Дубовая, 1 — 219 м², 21 500 000 ₽</li>
+          <li>Дубовая, 2 — 219 м², 21 500 000 ₽</li>
+          <li>Еловая, 1 — 154,5 м², 16 500 000 ₽</li>
+        </ul>
+        <a class="route-card__action" href="#kontakty">Записаться на просмотр</a>
+      </article>
+
+      <article class="route-card">
+        <p class="route-card__label">Сценарий 02</p>
+        <h3 class="route-card__title">Участок + строительство с подрядом</h3>
+        <p class="route-card__text">
+          Подходит, если хотите выбрать участок и строить дом в согласованном стиле посёлка. Самостоятельная застройка без подряда не предусмотрена — это сохраняет единый облик среды.
+        </p>
+        <ul class="route-card__list">
+          <li>Участки на улицах Дубовая, Еловая, Ольховая, Подлесная</li>
+          <li>Типовые и индивидуальные проекты</li>
+          <li>Строительство в рамках архитектурной концепции</li>
+        </ul>
+        <a class="route-card__action" href="#kontakty">Подобрать участок</a>
+      </article>
+    </div>
+
+    <p style="margin-top:24px;font-size:13px;color:var(--text-muted);">
+      Все объекты подходят под Семейную ипотеку при наличии детей до 18 лет (один ребёнок до 7 лет или двое несовершеннолетних).
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ ТИПОВЫЕ ПРОЕКТЫ ═══ -->
+<style>
+  .projects-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .projects-tab {
+    padding: 12px 28px;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 180ms ease, border-color 180ms ease;
+  }
+
+  .projects-tab.is-active {
+    color: var(--text-strong);
+    border-bottom-color: var(--accent);
+  }
+
+  .projects-panel { display: none; }
+  .projects-panel.is-active { display: block; }
+
+  .project-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .project-gallery__main {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--bg-alt);
+    cursor: pointer;
+    transition: opacity 200ms ease;
+  }
+
+  .project-gallery__main:hover { opacity: 0.92; }
+
+  .project-gallery__thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .project-gallery__thumb {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--bg-alt);
+    cursor: pointer;
+    opacity: 0.65;
+    transition: opacity 180ms ease;
+    border: 2px solid transparent;
+  }
+
+  .project-gallery__thumb:hover,
+  .project-gallery__thumb.is-active { opacity: 1; border-color: var(--accent); }
+
+  .project-info__title {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-strong);
+    margin-bottom: 12px;
+  }
+
+  .project-info__meta {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .project-info__plan {
+    width: 100%;
+    border: 1px solid var(--border);
+    margin-top: 20px;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+  }
+
+  .project-info__plan:hover { opacity: 0.88; }
+
+  .project-info__plan-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .project-specs {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .project-spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-spec__label { color: var(--text-muted); }
+  .project-spec__value { font-weight: 700; color: var(--text-strong); }
+
+  @media (max-width: 900px) {
+    .project-layout { grid-template-columns: 1fr; gap: 28px; }
+    .project-gallery__thumbs { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .projects-tab { padding: 10px 16px; font-size: 12px; }
+    .project-gallery__thumbs { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+
+<section class="section section--alt" id="proekty" aria-labelledby="projects-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="projects-title">Типовые проекты</h2>
+    <p class="section__lead">
+      Для строительства с подрядом предлагаем три отработанных проекта в двух архитектурных стилях посёлка. Возможна адаптация планировки.
+    </p>
+
+    <div class="projects-tabs" role="tablist" aria-label="Проекты домов">
+      <button class="projects-tab is-active" role="tab" aria-selected="true" aria-controls="panel-p1" id="tab-p1">Проект №1</button>
+      <button class="projects-tab" role="tab" aria-selected="false" aria-controls="panel-p2" id="tab-p2">Проект №2 / №2А</button>
+      <button class="projects-tab" role="tab" aria-selected="false" aria-controls="panel-p3" id="tab-p3">«Лазурная»</button>
+      <button class="projects-tab" role="tab" aria-selected="false" aria-controls="panel-p4" id="tab-p4">«Пихтовая»</button>
+    </div>
+
+    <!-- Проект №1 -->
+    <div class="projects-panel is-active" id="panel-p1" role="tabpanel" aria-labelledby="tab-p1">
+      <div class="project-layout">
+        <div>
+          <img class="project-gallery__main" id="proj1-main" src="img/house1-rear.jpg" alt="Визуализация типового проекта №1">
+          <div class="project-gallery__thumbs">
+            <img class="project-gallery__thumb is-active" src="img/house1-rear.jpg" alt="" data-proj="1" data-full="img/house1-rear.jpg">
+            <img class="project-gallery__thumb" src="img/house1-carport.jpg" alt="" data-proj="1" data-full="img/house1-carport.jpg">
+            <img class="project-gallery__thumb" src="img/house1-side.jpg" alt="" data-proj="1" data-full="img/house1-side.jpg">
+            <img class="project-gallery__thumb" src="img/house1-back.jpg" alt="" data-proj="1" data-full="img/house1-back.jpg">
+          </div>
+        </div>
+        <div>
+          <h3 class="project-info__title">Проект №1</h3>
+          <p class="project-info__meta">Одноэтажный дом с навесом для автомобиля, открытой террасой и просторной гостиной.</p>
+          <div class="project-specs">
+            <div class="project-spec">
+              <span class="project-spec__label">Площадь дома</span>
+              <span class="project-spec__value">157,6 м² (с террасой)</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Этажей</span>
+              <span class="project-spec__value">1</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Стиль</span>
+              <span class="project-spec__value">Фломанский</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Навес для авто</span>
+              <span class="project-spec__value">Есть</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Терраса</span>
+              <span class="project-spec__value">Открытая + крытая</span>
+            </div>
+          </div>
+          <p class="project-info__plan-label">Планировка</p>
+          <img class="project-info__plan" src="img/house1-plan.jpg" alt="Планировка проекта №1" loading="lazy">
+          <br>
+          <a class="btn btn--outline" href="#kontakty" style="margin-top:20px;display:inline-flex;">Узнать подробнее</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Проект №2 / №2А -->
+    <div class="projects-panel" id="panel-p2" role="tabpanel" aria-labelledby="tab-p2">
+      <div class="project-layout">
+        <div>
+          <img class="project-gallery__main" id="proj2-main" src="img/house2-rear.jpg" alt="Визуализация типового проекта №2">
+          <div class="project-gallery__thumbs">
+            <img class="project-gallery__thumb is-active" src="img/house2-rear.jpg" alt="" data-proj="2" data-full="img/house2-rear.jpg">
+            <img class="project-gallery__thumb" src="img/house2-front.jpg" alt="" data-proj="2" data-full="img/house2-front.jpg">
+            <img class="project-gallery__thumb" src="img/house2-side.jpg" alt="" data-proj="2" data-full="img/house2-side.jpg">
+            <img class="project-gallery__thumb" src="img/house2a-front.jpg" alt="" data-proj="2" data-full="img/house2a-front.jpg">
+          </div>
+        </div>
+        <div>
+          <h3 class="project-info__title">Проект №2 / №2А</h3>
+          <p class="project-info__meta">Одноэтажный дом с крытой террасой. Вариант №2А — зеркальная версия планировки для угловых участков.</p>
+          <div class="project-specs">
+            <div class="project-spec">
+              <span class="project-spec__label">Площадь дома</span>
+              <span class="project-spec__value">169 м² (с террасой)</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Этажей</span>
+              <span class="project-spec__value">1</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Стиль</span>
+              <span class="project-spec__value">Фломанский</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Терраса</span>
+              <span class="project-spec__value">Крытая</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Вариант 2А</span>
+              <span class="project-spec__value">Зеркальная планировка</span>
+            </div>
+          </div>
+          <p class="project-info__plan-label">Планировки №2 и №2А</p>
+          <img class="project-info__plan" src="img/house2-plan.jpg" alt="Планировка проекта №2" loading="lazy">
+          <img class="project-info__plan" src="img/house2a-plan.jpg" alt="Планировка проекта №2А" loading="lazy" style="margin-top:8px;">
+          <br>
+          <a class="btn btn--outline" href="#kontakty" style="margin-top:20px;display:inline-flex;">Узнать подробнее</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Проект «Лазурная» -->
+    <div class="projects-panel" id="panel-p3" role="tabpanel" aria-labelledby="tab-p3">
+      <div class="project-layout">
+        <div>
+          <img class="project-gallery__main" id="proj3-main" src="img/modern-street.jpg" alt="Визуализация проекта Лазурная — современный стиль">
+          <div class="project-gallery__thumbs">
+            <img class="project-gallery__thumb is-active" src="img/modern-street.jpg" alt="" data-proj="3" data-full="img/modern-street.jpg">
+            <img class="project-gallery__thumb" src="img/modern-aerial.jpg" alt="" data-proj="3" data-full="img/modern-aerial.jpg">
+            <img class="project-gallery__thumb" src="img/modern-style-terrace.jpg" alt="" data-proj="3" data-full="img/modern-style-terrace.jpg">
+            <img class="project-gallery__thumb" src="img/modern-style-front.jpg" alt="" data-proj="3" data-full="img/modern-style-front.jpg">
+          </div>
+        </div>
+        <div>
+          <h3 class="project-info__title">«Лазурная»</h3>
+          <p class="project-info__meta">Одноэтажный дом в современном стиле с плоской кровлей, просторной кухней-гостиной, открытой террасой и навесом для автомобиля.</p>
+          <div class="project-specs">
+            <div class="project-spec">
+              <span class="project-spec__label">Стиль</span>
+              <span class="project-spec__value">Минималистичный</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Этажей</span>
+              <span class="project-spec__value">1</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Комнаты</span>
+              <span class="project-spec__value">4</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Кухня-гостиная</span>
+              <span class="project-spec__value">41,4 м²</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Терраса</span>
+              <span class="project-spec__value">Открытая</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Навес для авто</span>
+              <span class="project-spec__value">Есть</span>
+            </div>
+          </div>
+          <p class="project-info__plan-label">Планировка</p>
+          <img class="project-info__plan" src="img/modern-plan.jpg" alt="Планировка проекта Лазурная" loading="lazy">
+          <br>
+          <a class="btn btn--outline" href="#kontakty" style="margin-top:20px;display:inline-flex;">Узнать подробнее</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Проект «Пихтовая» -->
+    <div class="projects-panel" id="panel-p4" role="tabpanel" aria-labelledby="tab-p4">
+      <div class="project-layout">
+        <div>
+          <img class="project-gallery__main" id="proj4-main" src="img/pihtovaya-1.jpg" alt="Визуализация проекта Пихтовая — баварский стиль">
+          <div class="project-gallery__thumbs">
+            <img class="project-gallery__thumb is-active" src="img/pihtovaya-1.jpg" alt="" data-proj="4" data-full="img/pihtovaya-1.jpg">
+            <img class="project-gallery__thumb" src="img/pihtovaya-2.jpg" alt="" data-proj="4" data-full="img/pihtovaya-2.jpg">
+            <img class="project-gallery__thumb" src="img/pihtovaya-3.jpg" alt="" data-proj="4" data-full="img/pihtovaya-3.jpg">
+            <img class="project-gallery__thumb" src="img/pihtovaya-4.jpg" alt="" data-proj="4" data-full="img/pihtovaya-4.jpg">
+            <img class="project-gallery__thumb" src="img/pihtovaya-5.jpg" alt="" data-proj="4" data-full="img/pihtovaya-5.jpg">
+          </div>
+        </div>
+        <div>
+          <h3 class="project-info__title">«Пихтовая»</h3>
+          <p class="project-info__meta">Одноэтажный дом баварского стиля. Тёплый облицовочный кирпич, вальмовая крыша, три спальни и просторная кухня-гостиная с выходом на террасу.</p>
+          <div class="project-specs">
+            <div class="project-spec">
+              <span class="project-spec__label">Стиль</span>
+              <span class="project-spec__value">Баварский</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Этажей</span>
+              <span class="project-spec__value">1</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Площадь</span>
+              <span class="project-spec__value">125,5 м²</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Спальни</span>
+              <span class="project-spec__value">3</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Кухня-гостиная</span>
+              <span class="project-spec__value">33,6 м²</span>
+            </div>
+            <div class="project-spec">
+              <span class="project-spec__label">Терраса</span>
+              <span class="project-spec__value">12,4 м²</span>
+            </div>
+          </div>
+          <p class="project-info__plan-label">Планировка</p>
+          <img class="project-info__plan" src="img/pihtovaya-plan.jpg" alt="Планировка проекта Пихтовая" loading="lazy">
+          <br>
+          <a class="btn btn--outline" href="#kontakty" style="margin-top:20px;display:inline-flex;">Узнать подробнее</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ ИНФРАСТРУКТУРА ═══ -->
+<section class="section" id="infra" aria-labelledby="infra-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="infra-title">Инфраструктура района</h2>
+    <p class="section__lead">Староживотинное — устроенный район с развитой инфраструктурой и хорошей транспортной доступностью.</p>
+
+    <div class="infra-grid">
+      <div class="infra-item">
+        <div class="infra-item__time">5</div>
+        <div class="infra-item__unit">км до центра</div>
+        <div class="infra-item__name">Центр Воронежа</div>
+      </div>
+      <div class="infra-item">
+        <div class="infra-item__time">20</div>
+        <div class="infra-item__unit">минут</div>
+        <div class="infra-item__name">Сити-парк «Град»</div>
+      </div>
+      <div class="infra-item">
+        <div class="infra-item__time">10</div>
+        <div class="infra-item__unit">минут</div>
+        <div class="infra-item__name">Ледовый дворец «Алмаз»</div>
+      </div>
+      <div class="infra-item">
+        <div class="infra-item__time">15</div>
+        <div class="infra-item__unit">минут</div>
+        <div class="infra-item__name">Спа-отель «Яр»</div>
+      </div>
+      <div class="infra-item">
+        <div class="infra-item__time">10</div>
+        <div class="infra-item__unit">минут</div>
+        <div class="infra-item__name">Jani Crystal Resort & Spa</div>
+      </div>
+      <div class="infra-item">
+        <div class="infra-item__time">25</div>
+        <div class="infra-item__unit">минут</div>
+        <div class="infra-item__name">Музей-усадьба Веневитинова</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ КАРТА ═══ -->
+<style>
+  .map-section { background: var(--bg-alt); }
+  .map-wrap {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    min-height: 460px;
+  }
+  .map-caption {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .map-caption__item { display: flex; align-items: center; gap: 8px; }
+  .map-caption__dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0;
+  }
+  @media (max-width: 768px) { .map-wrap iframe { height: 320px; } }
+</style>
+
+<section class="section map-section" id="karta" aria-labelledby="map-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="map-title">Как нас найти</h2>
+    <p class="section__lead">КП «Подлесный» находится в Строживотинном — 5 км от центра Воронежа, рядом с дубовым лесом.</p>
+
+    <div class="map-wrap">
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A46196eeb22f94d017eb9dfded93b258ac71b2d4d4f2502e34beccfaf7b963a6a&amp;width=100%25&amp;height=460&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+
+    <div class="map-caption">
+      <div class="map-caption__item">
+        <span class="map-caption__dot"></span>
+        <span>с. Строживотинное, Рамонский район</span>
+      </div>
+      <div class="map-caption__item">
+        <span class="map-caption__dot"></span>
+        <span>5 км от центра Воронежа</span>
+      </div>
+      <div class="map-caption__item">
+        <span class="map-caption__dot"></span>
+        <span>Асфальт до въезда в посёлок</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ КОММУНИКАЦИИ ═══ -->
+<section class="section section--alt" id="komm" aria-labelledby="comms-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="comms-title">Коммуникации</h2>
+    <p class="section__lead">На каждый участок подведены все необходимые коммуникации. Техническое подключение не нужно ждать.</p>
+
+    <div class="comms-grid">
+      <div class="comm-item">
+        <svg class="comm-item__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4v5M18 27v5M4 18h5M27 18h5M8.1 8.1l3.5 3.5M24.4 24.4l3.5 3.5M8.1 27.9l3.5-3.5M24.4 11.6l3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <div>
+          <div class="comm-item__title">Электричество</div>
+          <div class="comm-item__text">15 кВт на участок, подключение выполнено</div>
+        </div>
+      </div>
+
+      <div class="comm-item">
+        <svg class="comm-item__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 5c0 0 10 7.5 10 16a10 10 0 01-20 0C8 12.5 18 5 18 5z" stroke="currentColor" stroke-width="2"/>
+          <path d="M14 24a4 4 0 008 0" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div>
+          <div class="comm-item__title">Газ</div>
+          <div class="comm-item__text">Газопровод подведён к участку и в дом</div>
+        </div>
+      </div>
+
+      <div class="comm-item">
+        <svg class="comm-item__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 8v20M8 18h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <div>
+          <div class="comm-item__title">Водоснабжение</div>
+          <div class="comm-item__text">Скважина, водоотведение через септик</div>
+        </div>
+      </div>
+
+      <div class="comm-item">
+        <svg class="comm-item__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M6 28l6-8h12l6 8H6z" stroke="currentColor" stroke-width="2"/>
+          <path d="M18 20V12M12 14l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="comm-item__title">Асфальт</div>
+          <div class="comm-item__text">Асфальтированные дороги до каждого участка</div>
+        </div>
+      </div>
+
+      <div class="comm-item">
+        <svg class="comm-item__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect x="8" y="8" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 16h20M16 8v20" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div>
+          <div class="comm-item__title">Интернет и ТВ</div>
+          <div class="comm-item__text">Оптоволокно и кабельное телевидение</div>
+        </div>
+      </div>
+
+      <div class="comm-item">
+        <svg class="comm-item__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M10 28V10l8-4 8 4v18" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="18" width="8" height="10" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="18" cy="14" r="2" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div>
+          <div class="comm-item__title">Безопасность</div>
+          <div class="comm-item__text">Шлагбаум, видеонаблюдение, освещение улиц</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ИПОТЕКА И СОТРУДНИЧЕСТВО ═══ -->
+<section class="section" id="ipoteka" aria-labelledby="finance-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="finance-title">Ипотека и сотрудничество</h2>
+    <p class="section__lead">
+      Поможем подобрать ипотечную программу и сопроводим сделку. Работаем с риелторами и агентствами.
+    </p>
+
+    <div class="finance-grid">
+      <div class="finance-card">
+        <p class="finance-card__label">Ипотека</p>
+        <h3 class="finance-card__title">Помогаем с оформлением</h3>
+        <p class="finance-card__text">
+          Готовые дома и участки с подрядом подходят для покупки в ипотеку. Подберём программу под вашу ситуацию.
+        </p>
+        <ul class="finance-list">
+          <li>Первоначальный взнос — от 20%</li>
+          <li>Семейная ипотека от 6% — при наличии ребёнка до 7 лет или двух несовершеннолетних</li>
+          <li>Стандартная ипотека — актуальные ставки по запросу</li>
+          <li>Работаем со Сбербанком, ВТБ и Дом.РФ</li>
+          <li>Сопровождение через ипотечного брокера</li>
+        </ul>
+        <p class="finance-card__note">Условия зависят от программы, банка, объекта и категории покупателя. Финальные условия — на консультации.</p>
+      </div>
+
+      <div class="finance-card">
+        <p class="finance-card__label">Риелторам</p>
+        <h3 class="finance-card__title">Открыты к сотрудничеству</h3>
+        <p class="finance-card__text">
+          Работаем с риелторами и агентствами недвижимости. По объектам КП «Подлесный» предусмотрена партнёрская комиссия от сделки.
+        </p>
+        <ul class="finance-list">
+          <li>Партнёрская комиссия от сделки</li>
+          <li>Актуальные материалы по объектам по запросу</li>
+          <li>Прозрачные условия сотрудничества</li>
+          <li>Поддержка на всех этапах сделки</li>
+        </ul>
+        <a class="btn btn--outline" href="mailto:putilin-e@bk.ru">Связаться по сотрудничеству</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FAQ ═══ -->
+<style>
+  /* ─── FAQ accordion ─── */
+  .faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-strong);
+    text-align: left;
+    line-height: 1.4;
+  }
+  .faq-question:hover { color: #000; }
+  .faq-arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 240ms ease;
+  }
+  .faq-arrow::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    transform: rotate(45deg) translateY(-2px);
+    transition: border-color 240ms ease;
+  }
+  .faq-item.is-open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 280ms ease;
+  }
+  .faq-item.is-open .faq-answer { max-height: 600px; }
+  .faq-answer__inner {
+    padding: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+  .faq-answer__inner p + p { margin-top: 10px; }
+  .faq-answer__inner strong { color: var(--text); }
+  @media (max-width: 768px) {
+    .faq-question { font-size: 15px; padding: 18px 0; }
+  }
+</style>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="section__inner">
+    <div class="divider"></div>
+    <h2 class="section__title" id="faq-title">Частые вопросы</h2>
+    <p class="section__lead">Собрали ответы на вопросы, которые чаще всего задают на просмотрах.</p>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Можно ли купить участок без подряда?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>Участки в «Подлесном» продаются <strong>только с подрядом на строительство</strong>. Это условие регламента — оно гарантирует единый архитектурный стиль посёлка и исключает хаотичную застройку.</p>
+            <p>При покупке участка вы выбираете один из нескольких готовых проектов. Возможна адаптация планировки под ваши пожелания. Строительство ведут проверенные партнёры посёлка.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Что входит в цену готового дома?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>В стоимость каждого дома включены: <strong>все коммуникации</strong> (газ в доме, скважина, электричество, септик) и <strong>забор с трёх сторон</strong>. Дома сдаются в предчистовой отделке — готово к финишным работам по вашему вкусу.</p>
+            <p><strong>Благоустройство участка</strong> в базовую стоимость не входит, но доступно за дополнительную плату. Полный состав — в карточке конкретного дома.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Можно ли купить в ипотеку?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>Да. Все готовые дома подходят под <strong>Семейную ипотеку</strong>. Мы работаем с банками-партнёрами и аккредитованными риелторами, которые помогут подобрать программу, рассчитать платёж и оформить сделку.</p>
+            <p>Если у вас есть дети до 18 лет — почти наверняка подходите под Семейную ипотеку. Уточните условия у нас или у своего банка.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Как проходит сделка?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p><strong>Стандартный путь:</strong> консультация и осмотр объекта → согласование условий → подготовка документов → сделка через нотариуса или МФЦ → регистрация права собственности в Росреестре.</p>
+            <p>При ипотеке — банк сопровождает сделку. Наши риелторы-партнёры ведут весь процесс под ключ и помогают на каждом шаге.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Чем «Подлесный» отличается от участка в деревне?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>Три принципиальных отличия:</p>
+            <p><strong>Коммуникации.</strong> В деревне газ, вода и электричество — отдельная история на годы. В «Подлесном» они уже подведены к каждому участку и к каждому готовому дому.</p>
+            <p><strong>Архитектурный регламент.</strong> Соседи не построят рядом всё что угодно — действуют единые правила по стилю, крышам и заборам. Среда остаётся однородной.</p>
+            <p><strong>Инфраструктура посёлка.</strong> Асфальтированные дороги, освещение, управление общей территорией. Это коттеджный посёлок с хозяином, а не разрозненные участки на улице.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Почему важен архитектурный регламент?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>Регламент защищает ваши инвестиции. Когда у всех домов единый стиль, посёлок со временем не превращается в пёстрый самострой — среда остаётся привлекательной и <strong>лучше сохраняет стоимость</strong>.</p>
+            <p>В «Подлесном» — три согласованных архитектурных стиля, единые требования к крышам и заборам. Вы выбираете дом зная, что через 10 лет вид из окна останется таким же.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Когда можно приехать посмотреть?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>В любой день по предварительному согласованию. Оставьте заявку или позвоните нам — назначим удобное время. Просмотр занимает около часа.</p>
+            <p>Посёлок находится в Строживотинном, <strong>5 км от центра Воронежа</strong>. Добраться удобно как на машине, так и на общественном транспорте.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Есть ли коммуникации?
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" hidden>
+          <div class="faq-answer__inner">
+            <p>Да, все. На каждый участок и в каждый готовый дом подведены:</p>
+            <p><strong>Газ</strong> (в доме) · <strong>Скважина</strong> (водоснабжение) · <strong>Электричество</strong> 15 кВт · <strong>Септик</strong> (канализация)</p>
+            <p>К домам проложен асфальт. Отопление — центральное или индивидуальное газовое (зависит от конкретного дома). Техническое подключение к коммуникациям не нужно ждать.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ КОНТАКТЫ ═══ -->
+<style>
+  .contact-form { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
+  .contact-form__row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .contact-form__field { display:flex; flex-direction:column; gap:6px; }
+  .contact-form__label { font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5); }
+  .contact-form__input, .contact-form__textarea { width:100%; padding:12px 14px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.2); color:#fff; font-family:inherit; font-size:15px; line-height:1.4; outline:none; transition:border-color 180ms ease, background-color 180ms ease; border-radius:0; -webkit-appearance:none; }
+  .contact-form__input::placeholder, .contact-form__textarea::placeholder { color:rgba(255,255,255,0.3); }
+  .contact-form__input:focus, .contact-form__textarea:focus { border-color:var(--accent); background:rgba(255,255,255,0.1); }
+  .contact-form__textarea { min-height:90px; resize:vertical; }
+  .contact-form__note { font-size:12px; color:rgba(255,255,255,0.35); line-height:1.5; }
+  .contact-form__submit { align-self:flex-start; min-width:200px; }
+  @media (max-width:560px) { .contact-form__row { grid-template-columns:1fr; } .contact-form__submit { width:100%; } }
+</style>
+
+<section class="contact" id="kontakty" aria-labelledby="contact-title">
+  <div class="contact__inner">
+    <div>
+      <div class="divider" style="background:var(--accent);"></div>
+      <h2 class="contact__title" id="contact-title">Записаться на просмотр или задать вопрос</h2>
+      <p class="contact__subtitle">
+        Оставьте заявку — свяжемся в течение рабочего дня. Или напишите на почту, позвоните нам.
+      </p>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-name">Имя</label>
+            <input class="contact-form__input" type="text" id="cf-name" name="name" placeholder="Как вас зовут?" required>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-phone">Телефон</label>
+            <input class="contact-form__input" type="tel" id="cf-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+        </div>
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="cf-message">Вопрос или пожелание</label>
+          <textarea class="contact-form__textarea" id="cf-message" name="message" placeholder="Интересует готовый дом / участок / ипотека..."></textarea>
+        </div>
+        <p class="contact-form__note">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных.</p>
+        <button class="btn btn--primary contact-form__submit" type="submit">Отправить заявку</button>
+      </form>
+
+      <div id="cf-success" style="display:none;margin-top:20px;padding:18px 20px;background:rgba(166,179,178,0.18);border:1px solid var(--accent);color:#fff;font-size:15px;line-height:1.5;">
+        Спасибо! Мы получили вашу заявку и свяжемся в ближайшее время.
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;">
+        <a class="btn btn--email" href="mailto:putilin-e@bk.ru,kolesnikov-projects@yandex.ru">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          Написать на почту
+        </a>
+        <a class="btn btn--outline-light" href="tel:+79601343346">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.78a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Позвонить
+        </a>
+      </div>
+    </div>
+
+    <div class="contact__details">
+      <div>
+        <p class="contact__detail-label">Телефон</p>
+        <p class="contact__detail-value"><a href="tel:+79601343346">+7 960 134-33-46</a></p>
+      </div>
+      <div>
+        <p class="contact__detail-label">Email</p>
+        <p class="contact__detail-value">
+          <a href="mailto:putilin-e@bk.ru" style="display:block;">putilin-e@bk.ru</a>
+          <a href="mailto:kolesnikov-projects@yandex.ru" style="display:block;margin-top:4px;font-size:13px;opacity:0.75;">kolesnikov-projects@yandex.ru</a>
+        </p>
+      </div>
+      <div>
+        <p class="contact__detail-label">Офис продаж</p>
+        <p class="contact__detail-value">г. Воронеж, ул. Депутатская, 12</p>
+      </div>
+      <div>
+        <p class="contact__detail-label">Посёлок</p>
+        <p class="contact__detail-value">с. Староживотинное, Воронежский район</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="background:#2a2a28;padding:40px 20px 0;">
+  <div style="max-width:var(--max-w);margin:0 auto;">
+    <p style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;">Офис продаж</p>
+    <div style="width:100%;overflow:hidden;line-height:0;min-height:300px;">
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6a8b8c878d37cb3822f563faf77bcebc7a9aa7c3357371ac84185c3c177e2886&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-bar__inner">
+    <p class="footer-bar__copy">© 2025 КП «Подлесный». Все права защищены.</p>
+    <nav class="footer-bar__nav" aria-label="Навигация в подвале">
+      <a href="#doma">Дома</a>
+      <a href="#puti">Как купить</a>
+      <a href="#ipoteka">Ипотека</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+  </div>
+</div>
+
+
+<!-- ═══ PROJECT LIGHTBOX ═══ -->
+<style>
+  #proj-lightbox { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.93); display: flex; align-items: center; justify-content: center; cursor: zoom-out; }
+  #proj-lightbox[hidden] { display: none; }
+  #proj-lb-img { max-width: 94vw; max-height: 90vh; object-fit: contain; cursor: default; box-shadow: 0 8px 48px rgba(0,0,0,0.5); }
+  #proj-lb-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; line-height: 1; cursor: pointer; opacity: 0.7; padding: 4px 8px; }
+  #proj-lb-close:hover { opacity: 1; }
+</style>
+<div id="proj-lightbox" hidden role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+  <button id="proj-lb-close" aria-label="Закрыть">×</button>
+  <img id="proj-lb-img" src="" alt="">
+</div>
+
+
+<!-- ═══ SCRIPTS ═══ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Burger menu ── */
+  var burger = document.getElementById('burger');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  burger.addEventListener('click', function () {
+    var isOpen = mobileNav.classList.toggle('is-open');
+    burger.classList.toggle('is-open', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileNav.classList.remove('is-open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ── House modal + gallery ── */
+  var houseDetails = {
+    "dubovaya-1": {
+      title: "ул. Дубовая, 1",
+      priceLabel: "21 500 000 ₽",
+      imageAlt: "Дом на Дубовой 1",
+      photos: [
+        "https://static.tildacdn.com/tild3964-3263-4238-b630-396638343236/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6430-3938-4061-b538-333863326564/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3737-3531-4833-b465-353866396366/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6534-3638-4435-b938-336132313835/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6439-3039-4535-a165-353436313639/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6232-6239-4134-a562-663561666232/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3730-3065-4934-b638-633965666137/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3432-3536-4439-b761-363432303132/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3762-3333-4963-a661-616232313431/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3439-6133-4365-a463-653337656235/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3762-3631-4464-a562-306431613636/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6165-3561-4062-a465-636639383932/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6165-6636-4538-b232-633536656462/photo_2026-04-25_21-.jpg"
+      ],
+      projectImages: [],
+      floorPlanImages: [],
+      note: "Рядом строится зеркальный дом на Дубовой, 2 по тому же проекту.",
+      description: [
+        "Дом 219 м² на участке 8,6 сот. по проекту «Лазурный».",
+        "Минималистичная архитектура: плоская крыша, панорамные окна, две террасы. Газоблок.",
+        "В стоимость входит забор с трёх сторон. Коммуникации подключены: газ в доме, газовое отопление, скважина, электричество 15 кВт, септик.",
+        "Предчистовая отделка. Асфальт к дому, парковка на участке. 5 км от центра Воронежа."
+      ],
+      bullets: [
+        "Площадь — 219 м², участок 8,6 сот.",
+        "Электричество — 15 кВт",
+        "Газ в доме, газовое отопление",
+        "Водоснабжение — скважина",
+        "Канализация — септик",
+        "Категория — ИЖС",
+        "Отделка — предчистовая",
+        "В стоимость: забор с 3 сторон",
+        "Благоустройство — за доп. плату",
+        "Подходит под Семейную ипотеку"
+      ]
+    },
+    "dubovaya-2": {
+      title: "ул. Дубовая, 2",
+      priceLabel: "21 500 000 ₽",
+      imageAlt: "Дом на Дубовой 2",
+      photos: [
+        "https://static.tildacdn.com/tild3964-3263-4238-b630-396638343236/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6430-3938-4061-b538-333863326564/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3737-3531-4833-b465-353866396366/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6534-3638-4435-b938-336132313835/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6439-3039-4535-a165-353436313639/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6232-6239-4134-a562-663561666232/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3730-3065-4934-b638-633965666137/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3432-3536-4439-b761-363432303132/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3762-3333-4963-a661-616232313431/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3439-6133-4365-a463-653337656235/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3762-3631-4464-a562-306431613636/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6165-3561-4062-a465-636639383932/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6165-6636-4538-b232-633536656462/photo_2026-04-25_21-.jpg"
+      ],
+      projectImages: [],
+      floorPlanImages: [],
+      note: "Зеркальное расположение относительно дома на Дубовой, 1. Фото обновятся после съёмки.",
+      description: [
+        "Дом 219 м² на участке 8,6 сот. по проекту «Лазурный». Зеркальная планировка относительно Дубовой, 1.",
+        "Минималистичная архитектура: плоская крыша, панорамные окна, две террасы. Газоблок.",
+        "В стоимость входит забор с трёх сторон. Коммуникации подключены: газ, скважина, электричество, септик.",
+        "Предчистовая отделка. Асфальт к дому, парковка на участке. 5 км от центра Воронежа."
+      ],
+      bullets: [
+        "Площадь — 219 м², участок 8,6 сот.",
+        "Электричество — 15 кВт",
+        "Газ в доме, газовое отопление",
+        "Водоснабжение — скважина",
+        "Канализация — септик",
+        "Категория — ИЖС",
+        "Отделка — предчистовая",
+        "В стоимость: забор с 3 сторон",
+        "Благоустройство — за доп. плату",
+        "Подходит под Семейную ипотеку"
+      ]
+    },
+    "elovaya-1": {
+      title: "ул. Еловая, 1",
+      priceLabel: "16 500 000 ₽",
+      imageAlt: "Дом на Еловой 1",
+      photos: [
+        "img/elovaya1-real-1.jpg",
+        "img/elovaya1-real-2.jpg",
+        "img/elovaya1-real-3.jpg",
+        "img/elovaya1-real-4.jpg",
+        "img/elovaya1-real-5.jpg",
+        "img/elovaya1-real-6.jpg",
+        "img/elovaya1-real-7.jpg",
+        "img/elovaya1-real-8.jpg",
+        "img/elovaya1-real-9.jpg",
+        "img/elovaya1-real-10.jpg",
+        "https://static.tildacdn.com/tild3963-3936-4634-b762-326362633734/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6365-3162-4161-b236-373262353137/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3430-3866-4265-a630-323666353164/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild3666-3936-4763-b936-636434613037/photo_2026-04-25_21-.jpg",
+        "https://static.tildacdn.com/tild6163-6231-4230-a265-353732653966/photo_2026-04-25_21-.jpg"
+      ],
+      projectImages: [],
+      floorPlanImages: [],
+      note: "",
+      description: [
+        "Дом 154,5 м² на участке 9 сот. Облицовка — кирпич ручной формовки Азарово, завод Тандем.",
+        "Большие окна, потолок 5 м в кухне-гостиной, терраса.",
+        "В стоимость входит отмостка, плитка, забор с трёх сторон. Коммуникации подключены: газ, центральное отопление, скважина, электричество, септик.",
+        "Предчистовая отделка. Асфальт к дому. Рядом магазин, аптека, детский сад. 5 км от центра."
+      ],
+      bullets: [
+        "Площадь — 154,5 м² (отапл. 142 м²), участок 9 сот.",
+        "Кирпич ручной формовки, потолок 5 м в гостиной",
+        "Газ в доме, центральное отопление",
+        "Водоснабжение — скважина",
+        "Канализация — септик",
+        "Категория — ИЖС",
+        "Отделка — предчистовая",
+        "В стоимость: отмостка, плитка, забор с 3 сторон",
+        "Подходит под Семейную ипотеку"
+      ]
+    }
+  };
+
+  var modal = document.getElementById('pdl-house-modal');
+  var modalImage = document.getElementById('pdl-modal-image');
+  var modalTitle = document.getElementById('pdl-modal-title');
+  var modalPrice = document.getElementById('pdl-modal-price');
+  var modalDescription = document.getElementById('pdl-modal-description');
+  var modalNote = document.getElementById('pdl-modal-note');
+  var modalBullets = document.getElementById('pdl-modal-bullets');
+  var modalCta = document.getElementById('pdl-modal-cta');
+  var galleryPrev = document.getElementById('pdl-gallery-prev');
+  var galleryNext = document.getElementById('pdl-gallery-next');
+  var galleryThumbs = document.getElementById('pdl-gallery-thumbs');
+  var activeTrigger = null;
+  var activeGallery = [];
+  var activeImageAlt = '';
+  var activeImageIndex = 0;
+  var touchStartX = 0;
+  var prevBodyOverflow = '';
+
+  function buildGallery(house) {
+    var items = [];
+    (house.photos || []).forEach(function (src) { items.push({ src: src, label: 'Фото', type: 'photo' }); });
+    (house.projectImages || []).forEach(function (src) { items.push({ src: src, label: 'Проект', type: 'project' }); });
+    (house.floorPlanImages || []).forEach(function (src) { items.push({ src: src, label: 'Планировка', type: 'plan' }); });
+    return items;
+  }
+
+  function setSlide(index) {
+    if (!activeGallery.length) return;
+    activeImageIndex = (index + activeGallery.length) % activeGallery.length;
+    modalImage.src = activeGallery[activeImageIndex].src;
+    modalImage.alt = activeGallery[activeImageIndex].alt || activeImageAlt;
+    galleryPrev.hidden = activeGallery.length < 2;
+    galleryNext.hidden = activeGallery.length < 2;
+    galleryThumbs.querySelectorAll('.pdl-gallery__thumb').forEach(function (btn, i) {
+      var active = i === activeImageIndex;
+      btn.classList.toggle('pdl-active', active);
+      btn.setAttribute('aria-current', String(active));
+    });
+  }
+
+  function renderThumbs(house) {
+    activeGallery = buildGallery(house);
+    activeImageAlt = house.imageAlt || house.title;
+    galleryThumbs.innerHTML = '';
+    activeGallery.forEach(function (item, i) {
+      var btn = document.createElement('button');
+      btn.className = 'pdl-gallery__thumb';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Фото ' + (i + 1));
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = '';
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      if (item.type !== 'photo') {
+        var lbl = document.createElement('span');
+        lbl.className = 'pdl-gallery__thumb-label';
+        lbl.textContent = item.label;
+        btn.appendChild(lbl);
+      }
+      btn.addEventListener('click', function () { setSlide(i); });
+      galleryThumbs.appendChild(btn);
+    });
+    galleryThumbs.hidden = activeGallery.length < 2;
+    setSlide(0);
+  }
+
+  function fillModal(house) {
+    modalTitle.textContent = house.title;
+    modalPrice.textContent = house.priceLabel;
+    renderThumbs(house);
+    modalDescription.innerHTML = '';
+    (house.description || []).forEach(function (text) {
+      var p = document.createElement('p');
+      p.textContent = text;
+      modalDescription.appendChild(p);
+    });
+    modalNote.textContent = house.note || '';
+    modalNote.hidden = !house.note;
+    modalBullets.innerHTML = '';
+    (house.bullets || []).forEach(function (text) {
+      var li = document.createElement('li');
+      li.textContent = text;
+      modalBullets.appendChild(li);
+    });
+    modalCta.href = '#kontakty';
+    modalCta.textContent = 'Записаться на просмотр';
+  }
+
+  function openModal(houseId, trigger) {
+    var house = houseDetails[houseId];
+    if (!house) return;
+    activeTrigger = trigger || null;
+    fillModal(house);
+    prevBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    modal.hidden = false;
+    requestAnimationFrame(function () {
+      modal.classList.add('pdl-open');
+      modal.querySelector('.pdl-modal__close').focus();
+    });
+  }
+
+  function closeModal() {
+    modal.classList.remove('pdl-open');
+    document.body.style.overflow = prevBodyOverflow;
+    setTimeout(function () { modal.hidden = true; }, 250);
+    if (activeTrigger) { activeTrigger.focus(); activeTrigger = null; }
+  }
+
+  document.addEventListener('click', function (e) {
+    var houseId = e.target.closest('[data-pdl-house]') && e.target.closest('[data-pdl-house]').dataset.pdlHouse;
+    if (houseId) { openModal(houseId, e.target.closest('[data-pdl-house]')); return; }
+    if (e.target.closest('[data-pdl-close]')) { closeModal(); return; }
+    if (e.target === modal) { closeModal(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key === 'ArrowLeft') { setSlide(activeImageIndex - 1); }
+    if (e.key === 'ArrowRight') { setSlide(activeImageIndex + 1); }
+  });
+
+  galleryPrev.addEventListener('click', function () { setSlide(activeImageIndex - 1); });
+  galleryNext.addEventListener('click', function () { setSlide(activeImageIndex + 1); });
+
+  modal.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  modal.addEventListener('touchend', function (e) {
+    var delta = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(delta) > 40) { setSlide(activeImageIndex + (delta < 0 ? 1 : -1)); }
+  });
+
+})();
+
+/* ── Contact form ── */
+(function () {
+  var form = document.getElementById('contact-form');
+  var success = document.getElementById('cf-success');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.querySelector('#cf-name').value.trim();
+    var phone = form.querySelector('#cf-phone').value.trim();
+    var message = form.querySelector('#cf-message').value.trim();
+
+    if (!name || !phone) {
+      form.querySelector('#cf-name').style.borderColor = name ? '' : '#e57373';
+      form.querySelector('#cf-phone').style.borderColor = phone ? '' : '#e57373';
+      return;
+    }
+
+    var subject = encodeURIComponent('Заявка с сайта КП Подлесный — ' + name);
+    var body = encodeURIComponent(
+      'Имя: ' + name + '\n' +
+      'Телефон: ' + phone + '\n' +
+      (message ? 'Сообщение: ' + message : '')
+    );
+    var mailto = 'mailto:putilin-e@bk.ru,kolesnikov-projects@yandex.ru?subject=' + subject + '&body=' + body;
+
+    window.location.href = mailto;
+
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+
+  /* ─── Projects: tabs + thumbs + lightbox ─── */
+  (function () {
+    var lb = document.getElementById('proj-lightbox');
+    var lbImg = document.getElementById('proj-lb-img');
+    var lbClose = document.getElementById('proj-lb-close');
+
+    function openLb(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+    function closeLb() {
+      lb.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', function (e) { if (!lb.hidden && e.key === 'Escape') closeLb(); });
+
+    // Tab switching
+    document.querySelectorAll('.projects-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var targetId = tab.getAttribute('aria-controls');
+        document.querySelectorAll('.projects-tab').forEach(function (t) {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.projects-panel').forEach(function (p) {
+          p.classList.remove('is-active');
+        });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(targetId).classList.add('is-active');
+      });
+    });
+
+    // Thumbnail click → swap main image
+    document.querySelectorAll('.project-gallery__thumb').forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        var panel = thumb.closest('.projects-panel');
+        var main = panel.querySelector('.project-gallery__main');
+        main.src = thumb.dataset.full;
+        panel.querySelectorAll('.project-gallery__thumb').forEach(function (t) {
+          t.classList.remove('is-active');
+        });
+        thumb.classList.add('is-active');
+      });
+    });
+
+    // Main image click → open lightbox
+    document.querySelectorAll('.project-gallery__main').forEach(function (img) {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function () { openLb(img.src, img.alt); });
+    });
+
+    // Plan image click → open lightbox
+    document.querySelectorAll('.project-info__plan').forEach(function (img) {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function () { openLb(img.src, img.alt); });
+    });
+  })();
+
+  /* ─── FAQ accordion ─── */
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('is-open');
+
+      // Close all
+      document.querySelectorAll('.faq-item.is-open').forEach(function(open) {
+        open.classList.remove('is-open');
+        open.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        open.querySelector('.faq-answer').hidden = true;
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
