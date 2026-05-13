@@ -1210,15 +1210,46 @@
     pointer-events: none;
     letter-spacing: 0.02em;
   }
+  .genplan__legend {
+    display: flex;
+    gap: 28px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .genplan__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-muted, #a0a8a5);
+  }
+  .genplan__dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .genplan__dot--free { background: #fff; border: 1.5px solid #ccc; }
+  .genplan__dot--taken { background: #2a3530; border: 1.5px solid #2a3530; }
 </style>
 
 <section class="section genplan" id="genplan" aria-labelledby="genplan-title">
   <div class="section__inner">
     <h2 class="section__title" id="genplan-title">Генплан посёлка</h2>
-    <p class="section__lead">Аэровизуализация посёлка. Пять улиц, окружённых лесом&nbsp;— Подлесная, Пихтовая, Еловая, Дубовая и Осиновая.</p>
+    <p class="section__lead">Аэровизуализация семи улиц посёлка, окружённых лесом.</p>
     <div class="genplan__wrap" id="genplan-wrap" tabindex="0" role="button" aria-label="Открыть генплан на весь экран">
       <img class="genplan__img" src="img/genplan.jpg" alt="Генплан коттеджного посёлка Подлесный" width="1394" height="1128">
       <span class="genplan__hint">нажмите для увеличения</span>
+    </div>
+    <div class="genplan__legend">
+      <div class="genplan__legend-item">
+        <span class="genplan__dot genplan__dot--free"></span>
+        Свободно
+      </div>
+      <div class="genplan__legend-item">
+        <span class="genplan__dot genplan__dot--taken"></span>
+        Недоступно
+      </div>
     </div>
   </div>
 </section>
