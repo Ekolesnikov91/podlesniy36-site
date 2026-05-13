@@ -1052,6 +1052,7 @@
 
     <nav class="site-header__nav" aria-label="Основная навигация">
       <a href="#o-posyolke">О посёлке</a>
+      <a href="#genplan">Генплан</a>
       <a href="#reglament">Регламент</a>
       <a href="#doma">Готовые дома</a>
       <a href="#puti">Как купить</a>
@@ -1070,6 +1071,7 @@
 
   <nav class="site-header__mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
     <a href="#o-posyolke">О посёлке</a>
+    <a href="#genplan">Генплан</a>
     <a href="#reglament">Регламент</a>
     <a href="#doma">Готовые дома</a>
     <a href="#puti">Как купить</a>
@@ -1174,6 +1176,49 @@
         <div class="about-item__title">Дороги и тротуары</div>
         <div class="about-item__text">Асфальтированные дороги внутри посёлка, тротуары вдоль улиц, уличное освещение. Инфраструктура уже готова.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ГЕНПЛАН ═══ -->
+<style>
+  .genplan { background: var(--bg-alt); }
+  .genplan__wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    cursor: zoom-in;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.22);
+  }
+  .genplan__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .genplan__hint {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    background: rgba(0,0,0,0.52);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    pointer-events: none;
+    letter-spacing: 0.02em;
+  }
+</style>
+
+<section class="section genplan" id="genplan" aria-labelledby="genplan-title">
+  <div class="section__inner">
+    <h2 class="section__title" id="genplan-title">Генплан посёлка</h2>
+    <p class="section__lead">Схема расположения участков и объектов инфраструктуры. Светлые дома&nbsp;— свободны, тёмные&nbsp;— недоступны.</p>
+    <div class="genplan__wrap" id="genplan-wrap" tabindex="0" role="button" aria-label="Открыть генплан на весь экран">
+      <img class="genplan__img" src="img/genplan.jpg" alt="Генплан коттеджного посёлка Подлесный" width="1620" height="971">
+      <span class="genplan__hint">нажмите для увеличения</span>
     </div>
   </div>
 </section>
@@ -2661,6 +2706,24 @@
     document.querySelectorAll('.project-info__plan').forEach(function (img) {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', function () { openLb(img.src, img.alt); });
+    });
+  })();
+
+  /* ─── Genplan lightbox ─── */
+  (function () {
+    var wrap = document.getElementById('genplan-wrap');
+    if (!wrap) return;
+    var lb = document.getElementById('proj-lightbox');
+    var lbImg = document.getElementById('proj-lb-img');
+    function openGenplan() {
+      lbImg.src = 'img/genplan.jpg';
+      lbImg.alt = 'Генплан коттеджного посёлка Подлесный';
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+    wrap.addEventListener('click', openGenplan);
+    wrap.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGenplan(); }
     });
   })();
 
